@@ -19,11 +19,11 @@
 ## 添加配置文件
 ```
 # 国际版
-OneList -a "url" -s "/onedrive01"
+./OneList -a "url" -s "/onedrive01"
 # 个人版(家庭版)
-OneList -ms -a "url" -s "/onedrive02"
+./OneList -ms -a "url" -s "/onedrive02"
 # 中国版(世纪互联)
-OneList -cn -a "url" -s "/onedrive03"
+./OneList -cn -a "url" -s "/onedrive03"
 
 # 在浏览器地址栏中获取以 http://loaclhost 开头的整个url内容
 # 将获取的完整url内容替换命令中的 url 三个字母
@@ -107,9 +107,9 @@ Usage of OneList:
 ## 运行
 ```
 # 保证 config.json 和 index.html 同目录, 直接运行.
-$ OneList
-# 监听公网 80 端口
-$ OneList -bind 0.0.0.0 -port 80
+$ ./OneList
+# 监听公网 6666 端口
+$ ./OneList -bind 0.0.0.0 -port 6666
 ```
 
 ## 注意
@@ -127,12 +127,12 @@ $ OneList -bind 0.0.0.0 -port 80
 ## 后台运行及开机自启
 ```
 # /path/to/OneList 为OneList的完整路径
-# 后台运行
-nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
+# 后台运行(先cd到OneList文件所在目录)
+nohup ./OneList -bind 0.0.0.0 -port 6666 >/dev/null 2>&1 &
 
 # 开机自启并后台运行
 编辑 /etc/crontab 文件, 并添加下面一行并多按几个回车. (有些系统不留空行会出现意外)
-@reboot root nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
+@reboot root nohup ./OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
 
 ```
 
