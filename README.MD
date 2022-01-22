@@ -108,8 +108,8 @@ Usage of OneList:
 ```
 # 保证 config.json 和 index.html 同目录, 直接运行.
 $ ./OneList
-# 监听公网 6666 端口
-$ ./OneList -bind 0.0.0.0 -port 6666
+# 监听公网 5288 端口
+$ ./OneList -bind 0.0.0.0 -port 5288
 ```
 
 ## 注意
@@ -128,7 +128,7 @@ $ ./OneList -bind 0.0.0.0 -port 6666
 ```
 # /path/to/OneList 为OneList的完整路径
 # 后台运行(先cd到OneList文件所在目录)
-nohup ./OneList -bind 0.0.0.0 -port 6666 >/dev/null 2>&1 &
+nohup ./OneList -bind 0.0.0.0 -port 5288 >/dev/null 2>&1 &
 
 # 开机自启并后台运行
 编辑 /etc/crontab 文件, 并添加下面一行并多按几个回车. (有些系统不留空行会出现意外)
