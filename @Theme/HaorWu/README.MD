@@ -1,6 +1,6 @@
 # Author: [https://github.com/HaorWu](https://github.com/HaorWu)
 # Download:
-[https://raw.githubusercontent.com/MoeClub/OneList/master/Rewrite/@Theme/HaorWu/index.html](https://raw.githubusercontent.com/MoeClub/OneList/master/Rewrite/@Theme/HaorWu/index.html)
+[https://github.com/SirenKeter/Onelist/raw/main/@Theme/HaorWu/index.html](https://github.com/SirenKeter/Onelist/raw/main/@Theme/HaorWu/index.html)
 # Feature:
 - 支持移动端自适应
 - 支持当页搜索
