@@ -131,10 +131,11 @@ Usage of OneList:
 ## 8、运行
 
 ```
+# 以下均为在OneList目录下运行的命令
 # 保证 config.json 和 index.html 同目录, 直接运行.
 ./OneList
 # 监听公网 5288 端口
-nohup ./OneList -bind 0.0.0.0 -port 5288 &
+nohup ./OneList -bind 0.0.0.0 -port 5288 >/dev/null 2>&1 &
 ```
 
 ## 9、注意
@@ -156,11 +157,11 @@ nohup ./OneList -bind 0.0.0.0 -port 5288 &
 ```
 # /path/to/OneList 为OneList的完整路径
 # 后台运行
-nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
+nohup /path/to/OneList -bind 0.0.0.0 -port 5288 >/dev/null 2>&1 &
 
 # 开机自启并后台运行
 编辑 /etc/crontab 文件, 并添加下面一行并多按几个回车. (有些系统不留空行会出现意外)
-@reboot root nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
+@reboot root nohup /path/to/OneList -bind 0.0.0.0 -port 5288 >/dev/null 2>&1 &
 ```
 
 ## 12、Client/Secret (~ 2299/12/31)
