@@ -131,7 +131,7 @@ Usage of OneList:
 ## 8、运行
 
 ```
-# 以下均为在OneList目录下运行的命令
+# 以下均为在OneList文件目录下运行的命令（确保同时存在config.json文件）
 # 保证 config.json 和 index.html 同目录, 直接运行.
 ./OneList
 # 监听公网 5288 端口
