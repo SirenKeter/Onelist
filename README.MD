@@ -31,35 +31,21 @@ wget https://github.com/SirenKeter/Onelist/raw/main/amd64/linux/OneList
 chmod +x OneList
 ```
 
-## 4、获取url,授权
+## 4、获取url授权
 
-<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All">国际版, 个人版(家庭版)</a>                                           
-
-
-
-
-
-
-
-
+<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All">国际版, 个人版(家庭版)</a>           
 
 <a href="https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?client_id=dfe36e60-6133-48cf-869f-4d15b8354769&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All">中国版(世纪互联)</a>
 
-## 5、配置文件
-
-```
-./OneList -a "url" -s "/onedrive01"
-```
-
-## 6、添加配置文件
+## 5、添加配置文件
 
 ```
 # 国际版
-OneList -a "url" -s "/onedrive01"
+./OneList -a "url" -s "/onedrive01"
 # 个人版(家庭版)
-OneList -ms -a "url" -s "/onedrive02"
+./OneList -ms -a "url" -s "/onedrive02"
 # 中国版(世纪互联)
-OneList -cn -a "url" -s "/onedrive03"
+./OneList -cn -a "url" -s "/onedrive03"
 
 # 在浏览器地址栏中获取以 http://loaclhost 开头的整个url内容
 # 将获取的完整url内容替换命令中的 url 三个字母
@@ -69,7 +55,7 @@ OneList -cn -a "url" -s "/onedrive03"
 # 提示 Success! Add config. '/path/to/config.json' 则成功
 ```
 
-## 7、修改配置文件（config.json）
+## 6、修改配置文件（config.json）
 
 ```
 [
@@ -95,7 +81,7 @@ OneList -cn -a "url" -s "/onedrive03"
 ]
 ```
 
-## 8、使用
+## 7、使用
 
 ```
 Usage of OneList:
@@ -142,7 +128,7 @@ Usage of OneList:
         Set Proxy Domain. ["x.sharepoint.com|domain.com;x.sharepoint.cn|domain.cn;..."]
 ```
 
-## 9、运行
+## 8、运行
 
 ```
 # 保证 config.json 和 index.html 同目录, 直接运行.
@@ -151,12 +137,12 @@ Usage of OneList:
 nohup ./OneList -bind 0.0.0.0 -port 5288 &
 ```
 
-## 10、注意
+## 9、注意
 
 - 在初次缓存过程中或者打开空文件夹, 会提示 No Found
 - 请使用 UTF-8 编码模式手动编辑 config.json 文件
 
-## 11、Nginx 反代配置
+## 10、Nginx 反代配置
 
 ```
     location ^~ /onedrive/ {
@@ -165,7 +151,7 @@ nohup ./OneList -bind 0.0.0.0 -port 5288 &
     }
 ```
 
-## 12、后台运行及开机自启
+## 11、后台运行及开机自启
 
 ```
 # /path/to/OneList 为OneList的完整路径
@@ -177,7 +163,7 @@ nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
 @reboot root nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
 ```
 
-## 13、Client/Secret (~ 2299/12/31)
+## 12、Client/Secret (~ 2299/12/31)
 
 ```
 # 国际版: 78d4dc35-7e46-42c6-9023-2d39314433a5| ZudGl-p.m=LMmr3VrKgAyOf-WevB3p50
@@ -185,7 +171,7 @@ nohup /path/to/OneList -bind 0.0.0.0 -port 80 >/dev/null 2>&1 &
 # ReplyURL: http://localhost/onedrive-login
 ```
 
-## 14、防火墙相关：
+## 13、防火墙相关：
 
 ```
 CentOS 7 防火墙放行端口：
@@ -201,12 +187,3 @@ sudo ufw enable               开启防火墙（记得将常用端口都开放�
 sudo ufw allow 5288
 ```
 
-
-```
-
-## Client/Secret (~ 2299/12/31)
-```
-# 国际版: 78d4dc35-7e46-42c6-9023-2d39314433a5| ZudGl-p.m=LMmr3VrKgAyOf-WevB3p50
-# 中国版: dfe36e60-6133-48cf-869f-4d15b8354769| H0-1:6.Sb8:WCW/J-c]K@fddCt[i0EZ2
-# ReplyURL: http://localhost/onedrive-login
-```
